@@ -1,0 +1,14 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        id: products
+        orientation: 'vertical'
+    BoxLayout:
+        size_hint: (1, 0.1)
+        orientation: 'horizontal'
+        Label:
+            text: 'total_price'
+            id: total_price
+        Button:
+            text: 'clear'
+            on_press: app.handle_reset()
