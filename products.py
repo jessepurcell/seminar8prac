@@ -6,7 +6,7 @@ class Products(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.total_price = 0
-        self.product_to_price = {"test": 10, "test2": 15}
+        self.products = [Product("Test", 1)]
         # load products here
 
     def build(self):
@@ -14,11 +14,11 @@ class Products(App):
         self.root = Builder.load_file('products.kv')
         return self.root
 
-    def handle_button_press(self, button):
-        if button.text == "Reset":
-            self.total_price = 0
-        else:
-            self.total_price += self.product_to_price[button.text]
+    def handle_reset(self, button):
+        self.total_price = 0
+
+    def handle_button(self, button):
+        pass
 
 
 # create and start the App running
